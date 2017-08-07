@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myFirstApp">
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-      <title>Mock AngularJS</title>
+      <title>Assignment1 - Lunch Check</title>
   </head>
-  <body ng-app="myFirstApp">
-    <h1>Hello</h1>
-    <div ng-controller="myFirstController">
+  <body >
+    <h1>Welcome to my 1st assignment</h1>
+    <div class="user" ng-controller="LunchCheckController">
       <div>
-        Your Name:
-        <input type="text"
-               ng-model="name"
-               ng-keyup="count();">
-      </div>
-      <div>
-        Inside the input is: {{name}}
-      </div>
-      <div>
-        The ASCII sum is: {{totalValue}}
-      </div>
-      <br>
-      <div >
-        <a href="di.html">Dependency Injection</a>
+        Please enter what you usually eat for lunch [separate using comma]:
+        <input type="text" placeholder="please enter here" ng-model="userinput">
+        <br>
+        <button type="submit" ng-click="respond();">Check If Too Much</button>
+        <p>{{message}}</p>
       </div>
     </div>
   </body>
