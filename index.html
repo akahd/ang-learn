@@ -1,6 +1,30 @@
-<!Doctype html>
-  <html>
-    <head>
-      Hello
-    </head>
-  </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+      <title>Mock AngularJS</title>
+  </head>
+  <body ng-app="myFirstApp">
+    <h1>Hello</h1>
+    <div ng-controller="myFirstController">
+      <div>
+        Your Name:
+        <input type="text"
+               ng-model="name"
+               ng-keyup="count();">
+      </div>
+      <div>
+        Inside the input is: {{name}}
+      </div>
+      <div>
+        The ASCII sum is: {{totalValue}}
+      </div>
+      <br>
+      <div >
+        <a href="di.html">Dependency Injection</a>
+      </div>
+    </div>
+  </body>
+</html>
