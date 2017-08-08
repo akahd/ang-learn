@@ -7,10 +7,11 @@
   angular.module('myFirstApp', [])
   // inside the div tag is controlled by the controller
   .controller('LunchCheckController', LunchCheckController);
-  LunchCheckController.$inject = ['$scope', '$filter'];
+  LunchCheckController.$inject = ['$scope'];
   function LunchCheckController($scope) {
     $scope.userinput = "";
     $scope.message = "";
+    $scope.c = "black";
 
     $scope.respond = function (){
       var response = "";
@@ -25,6 +26,17 @@
       }
       $scope.userinput = "";
       $scope.message = response;
+
+      changeColor(num);
+    }
+
+    function changeColor(x) {
+      console.log("!");
+      if (x === -1) {
+        $scope.c ="red";
+      } else {
+        $scope.c ="green";
+      }
     }
 
     function countFood(string) {
@@ -42,5 +54,6 @@
       });
       return arr.length;
     }
-  };
+  }
+
 })();
